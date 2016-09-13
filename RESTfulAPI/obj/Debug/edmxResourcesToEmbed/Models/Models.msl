@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="tapsystemModelStoreContainer" CdmEntityContainer="TapSystemEntities">
+    <EntitySetMapping Name="tblCities">
+      <EntityTypeMapping TypeName="tapsystemModel.tblCity">
+        <MappingFragment StoreEntitySet="tblCity">
+          <ScalarProperty Name="iCityID" ColumnName="iCityID" />
+          <ScalarProperty Name="tCityName" ColumnName="tCityName" />
+          <ScalarProperty Name="tCreatedBy" ColumnName="tCreatedBy" />
+          <ScalarProperty Name="dDateCreated" ColumnName="dDateCreated" />
+          <ScalarProperty Name="tModifiedBy" ColumnName="tModifiedBy" />
+          <ScalarProperty Name="dDateModified" ColumnName="dDateModified" />
+          <ScalarProperty Name="bActive" ColumnName="bActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEnrolledAccounts">
+      <EntityTypeMapping TypeName="tapsystemModel.tblEnrolledAccount">
+        <MappingFragment StoreEntitySet="tblEnrolledAccounts">
+          <ScalarProperty Name="iAccountID" ColumnName="iAccountID" />
+          <ScalarProperty Name="tUsername" ColumnName="tUsername" />
+          <ScalarProperty Name="tPassword" ColumnName="tPassword" />
+          <ScalarProperty Name="tFullname" ColumnName="tFullname" />
+          <ScalarProperty Name="tEmailAddress" ColumnName="tEmailAddress" />
+          <ScalarProperty Name="tContactNumber" ColumnName="tContactNumber" />
+          <ScalarProperty Name="tAccountType" ColumnName="tAccountType" />
+          <ScalarProperty Name="iLoadAmount" ColumnName="iLoadAmount" />
+          <ScalarProperty Name="bSMS" ColumnName="bSMS" />
+          <ScalarProperty Name="dDateRegistered" ColumnName="dDateRegistered" />
+          <ScalarProperty Name="bActive" ColumnName="bActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMasterSettings">
+      <EntityTypeMapping TypeName="tapsystemModel.tblMasterSetting">
+        <MappingFragment StoreEntitySet="tblMasterSetting">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="tValue" ColumnName="tValue" />
+          <ScalarProperty Name="tCode" ColumnName="tCode" />
+          <ScalarProperty Name="tGroup" ColumnName="tGroup" />
+          <ScalarProperty Name="tDescription" ColumnName="tDescription" />
+          <ScalarProperty Name="tCreatedBy" ColumnName="tCreatedBy" />
+          <ScalarProperty Name="dDateCreated" ColumnName="dDateCreated" />
+          <ScalarProperty Name="tModifiedBy" ColumnName="tModifiedBy" />
+          <ScalarProperty Name="dDateModified" ColumnName="dDateModified" />
+          <ScalarProperty Name="bActive" ColumnName="bActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblRoutes">
+      <EntityTypeMapping TypeName="tapsystemModel.tblRoute">
+        <MappingFragment StoreEntitySet="tblRoutes">
+          <ScalarProperty Name="iRouteID" ColumnName="iRouteID" />
+          <ScalarProperty Name="tFrom" ColumnName="tFrom" />
+          <ScalarProperty Name="tTo" ColumnName="tTo" />
+          <ScalarProperty Name="tCreatedBy" ColumnName="tCreatedBy" />
+          <ScalarProperty Name="dDateCreated" ColumnName="dDateCreated" />
+          <ScalarProperty Name="tModifiedBy" ColumnName="tModifiedBy" />
+          <ScalarProperty Name="dDateModified" ColumnName="dDateModified" />
+          <ScalarProperty Name="bActive" ColumnName="bActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSubroutes">
+      <EntityTypeMapping TypeName="tapsystemModel.tblSubroute">
+        <MappingFragment StoreEntitySet="tblSubroute">
+          <ScalarProperty Name="iSubrouteID" ColumnName="iSubrouteID" />
+          <ScalarProperty Name="iRouteID" ColumnName="iRouteID" />
+          <ScalarProperty Name="tRouteName" ColumnName="tRouteName" />
+          <ScalarProperty Name="iCityID" ColumnName="iCityID" />
+          <ScalarProperty Name="nFareAmount" ColumnName="nFareAmount" />
+          <ScalarProperty Name="tCreatedBy" ColumnName="tCreatedBy" />
+          <ScalarProperty Name="dDateCreated" ColumnName="dDateCreated" />
+          <ScalarProperty Name="tModifiedBy" ColumnName="tModifiedBy" />
+          <ScalarProperty Name="dDateModified" ColumnName="dDateModified" />
+          <ScalarProperty Name="bActive" ColumnName="bActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUsers">
+      <EntityTypeMapping TypeName="tapsystemModel.tblUser">
+        <MappingFragment StoreEntitySet="tblUsers">
+          <ScalarProperty Name="iUserID" ColumnName="iUserID" />
+          <ScalarProperty Name="tFullName" ColumnName="tFullName" />
+          <ScalarProperty Name="tAccountType" ColumnName="tAccountType" />
+          <ScalarProperty Name="tUserName" ColumnName="tUserName" />
+          <ScalarProperty Name="tPassword" ColumnName="tPassword" />
+          <ScalarProperty Name="tCreatedBy" ColumnName="tCreatedBy" />
+          <ScalarProperty Name="dDateCreated" ColumnName="dDateCreated" />
+          <ScalarProperty Name="tModifiedBy" ColumnName="tModifiedBy" />
+          <ScalarProperty Name="dDateModified" ColumnName="dDateModified" />
+          <ScalarProperty Name="bActive" ColumnName="bActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="tapsystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblCity">
+          <Key>
+            <PropertyRef Name="iCityID" />
+          </Key>
+          <Property Name="iCityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tCityName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="tCreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="dDateCreated" Type="smalldatetime" />
+          <Property Name="tModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="dDateModified" Type="smalldatetime" />
+          <Property Name="bActive" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblEnrolledAccounts">
+          <Key>
+            <PropertyRef Name="iAccountID" />
+          </Key>
+          <Property Name="iAccountID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tUsername" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="tPassword" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="tFullname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="tEmailAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="tContactNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="tAccountType" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="iLoadAmount" Type="smallmoney" Nullable="false" />
+          <Property Name="bSMS" Type="int" Nullable="false" />
+          <Property Name="dDateRegistered" Type="smalldatetime" Nullable="false" />
+          <Property Name="bActive" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblMasterSetting">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tValue" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="tCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="tGroup" Type="nvarchar" MaxLength="50" />
+          <Property Name="tDescription" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="tCreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="dDateCreated" Type="smalldatetime" />
+          <Property Name="tModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="dDateModified" Type="smalldatetime" />
+          <Property Name="bActive" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblRoutes">
+          <Key>
+            <PropertyRef Name="iRouteID" />
+          </Key>
+          <Property Name="iRouteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tFrom" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="tTo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="tCreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="dDateCreated" Type="smalldatetime" />
+          <Property Name="tModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="dDateModified" Type="smalldatetime" />
+          <Property Name="bActive" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblSubroute">
+          <Key>
+            <PropertyRef Name="iSubrouteID" />
+          </Key>
+          <Property Name="iSubrouteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="iRouteID" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="tRouteName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="iCityID" Type="int" Nullable="false" />
+          <Property Name="nFareAmount" Type="float" Nullable="false" />
+          <Property Name="tCreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="dDateCreated" Type="smalldatetime" />
+          <Property Name="tModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="dDateModified" Type="smalldatetime" />
+          <Property Name="bActive" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblUsers">
+          <Key>
+            <PropertyRef Name="iUserID" />
+          </Key>
+          <Property Name="iUserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tFullName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="tAccountType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="tUserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="tPassword" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="tCreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="dDateCreated" Type="smalldatetime" />
+          <Property Name="tModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="dDateModified" Type="smalldatetime" />
+          <Property Name="bActive" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="tapsystemModelStoreContainer">
+          <EntitySet Name="tblCity" EntityType="Self.tblCity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblEnrolledAccounts" EntityType="Self.tblEnrolledAccounts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblMasterSetting" EntityType="Self.tblMasterSetting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblRoutes" EntityType="Self.tblRoutes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblSubroute" EntityType="Self.tblSubroute" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblUsers" EntityType="Self.tblUsers" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="tapsystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblCity">
+          <Key>
+            <PropertyRef Name="iCityID" />
+          </Key>
+          <Property Name="iCityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tCityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tCreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dDateCreated" Type="DateTime" Precision="0" />
+          <Property Name="tModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dDateModified" Type="DateTime" Precision="0" />
+          <Property Name="bActive" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblEnrolledAccount">
+          <Key>
+            <PropertyRef Name="iAccountID" />
+          </Key>
+          <Property Name="iAccountID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tFullname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tEmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tContactNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tAccountType" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="iLoadAmount" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+          <Property Name="bSMS" Type="Int32" Nullable="false" />
+          <Property Name="dDateRegistered" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="bActive" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblMasterSetting">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tCreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dDateCreated" Type="DateTime" Precision="0" />
+          <Property Name="tModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dDateModified" Type="DateTime" Precision="0" />
+          <Property Name="bActive" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblRoute">
+          <Key>
+            <PropertyRef Name="iRouteID" />
+          </Key>
+          <Property Name="iRouteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tFrom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tTo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tCreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dDateCreated" Type="DateTime" Precision="0" />
+          <Property Name="tModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dDateModified" Type="DateTime" Precision="0" />
+          <Property Name="bActive" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblSubroute">
+          <Key>
+            <PropertyRef Name="iSubrouteID" />
+          </Key>
+          <Property Name="iSubrouteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="iRouteID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="tRouteName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="iCityID" Type="Int32" Nullable="false" />
+          <Property Name="nFareAmount" Type="Double" Nullable="false" />
+          <Property Name="tCreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dDateCreated" Type="DateTime" Precision="0" />
+          <Property Name="tModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dDateModified" Type="DateTime" Precision="0" />
+          <Property Name="bActive" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblUser">
+          <Key>
+            <PropertyRef Name="iUserID" />
+          </Key>
+          <Property Name="iUserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tAccountType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tCreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dDateCreated" Type="DateTime" Precision="0" />
+          <Property Name="tModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dDateModified" Type="DateTime" Precision="0" />
+          <Property Name="bActive" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="TapSystemEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblCities" EntityType="Self.tblCity" />
+          <EntitySet Name="tblEnrolledAccounts" EntityType="Self.tblEnrolledAccount" />
+          <EntitySet Name="tblMasterSettings" EntityType="Self.tblMasterSetting" />
+          <EntitySet Name="tblRoutes" EntityType="Self.tblRoute" />
+          <EntitySet Name="tblSubroutes" EntityType="Self.tblSubroute" />
+          <EntitySet Name="tblUsers" EntityType="Self.tblUser" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="tapsystemModelStoreContainer" CdmEntityContainer="TapSystemEntities">
+          <EntitySetMapping Name="tblCities">
+            <EntityTypeMapping TypeName="tapsystemModel.tblCity">
+              <MappingFragment StoreEntitySet="tblCity">
+                <ScalarProperty Name="iCityID" ColumnName="iCityID" />
+                <ScalarProperty Name="tCityName" ColumnName="tCityName" />
+                <ScalarProperty Name="tCreatedBy" ColumnName="tCreatedBy" />
+                <ScalarProperty Name="dDateCreated" ColumnName="dDateCreated" />
+                <ScalarProperty Name="tModifiedBy" ColumnName="tModifiedBy" />
+                <ScalarProperty Name="dDateModified" ColumnName="dDateModified" />
+                <ScalarProperty Name="bActive" ColumnName="bActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblEnrolledAccounts">
+            <EntityTypeMapping TypeName="tapsystemModel.tblEnrolledAccount">
+              <MappingFragment StoreEntitySet="tblEnrolledAccounts">
+                <ScalarProperty Name="iAccountID" ColumnName="iAccountID" />
+                <ScalarProperty Name="tUsername" ColumnName="tUsername" />
+                <ScalarProperty Name="tPassword" ColumnName="tPassword" />
+                <ScalarProperty Name="tFullname" ColumnName="tFullname" />
+                <ScalarProperty Name="tEmailAddress" ColumnName="tEmailAddress" />
+                <ScalarProperty Name="tContactNumber" ColumnName="tContactNumber" />
+                <ScalarProperty Name="tAccountType" ColumnName="tAccountType" />
+                <ScalarProperty Name="iLoadAmount" ColumnName="iLoadAmount" />
+                <ScalarProperty Name="bSMS" ColumnName="bSMS" />
+                <ScalarProperty Name="dDateRegistered" ColumnName="dDateRegistered" />
+                <ScalarProperty Name="bActive" ColumnName="bActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblMasterSettings">
+            <EntityTypeMapping TypeName="tapsystemModel.tblMasterSetting">
+              <MappingFragment StoreEntitySet="tblMasterSetting">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="tValue" ColumnName="tValue" />
+                <ScalarProperty Name="tCode" ColumnName="tCode" />
+                <ScalarProperty Name="tGroup" ColumnName="tGroup" />
+                <ScalarProperty Name="tDescription" ColumnName="tDescription" />
+                <ScalarProperty Name="tCreatedBy" ColumnName="tCreatedBy" />
+                <ScalarProperty Name="dDateCreated" ColumnName="dDateCreated" />
+                <ScalarProperty Name="tModifiedBy" ColumnName="tModifiedBy" />
+                <ScalarProperty Name="dDateModified" ColumnName="dDateModified" />
+                <ScalarProperty Name="bActive" ColumnName="bActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblRoutes">
+            <EntityTypeMapping TypeName="tapsystemModel.tblRoute">
+              <MappingFragment StoreEntitySet="tblRoutes">
+                <ScalarProperty Name="iRouteID" ColumnName="iRouteID" />
+                <ScalarProperty Name="tFrom" ColumnName="tFrom" />
+                <ScalarProperty Name="tTo" ColumnName="tTo" />
+                <ScalarProperty Name="tCreatedBy" ColumnName="tCreatedBy" />
+                <ScalarProperty Name="dDateCreated" ColumnName="dDateCreated" />
+                <ScalarProperty Name="tModifiedBy" ColumnName="tModifiedBy" />
+                <ScalarProperty Name="dDateModified" ColumnName="dDateModified" />
+                <ScalarProperty Name="bActive" ColumnName="bActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblSubroutes">
+            <EntityTypeMapping TypeName="tapsystemModel.tblSubroute">
+              <MappingFragment StoreEntitySet="tblSubroute">
+                <ScalarProperty Name="iSubrouteID" ColumnName="iSubrouteID" />
+                <ScalarProperty Name="iRouteID" ColumnName="iRouteID" />
+                <ScalarProperty Name="tRouteName" ColumnName="tRouteName" />
+                <ScalarProperty Name="iCityID" ColumnName="iCityID" />
+                <ScalarProperty Name="nFareAmount" ColumnName="nFareAmount" />
+                <ScalarProperty Name="tCreatedBy" ColumnName="tCreatedBy" />
+                <ScalarProperty Name="dDateCreated" ColumnName="dDateCreated" />
+                <ScalarProperty Name="tModifiedBy" ColumnName="tModifiedBy" />
+                <ScalarProperty Name="dDateModified" ColumnName="dDateModified" />
+                <ScalarProperty Name="bActive" ColumnName="bActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblUsers">
+            <EntityTypeMapping TypeName="tapsystemModel.tblUser">
+              <MappingFragment StoreEntitySet="tblUsers">
+                <ScalarProperty Name="iUserID" ColumnName="iUserID" />
+                <ScalarProperty Name="tFullName" ColumnName="tFullName" />
+                <ScalarProperty Name="tAccountType" ColumnName="tAccountType" />
+                <ScalarProperty Name="tUserName" ColumnName="tUserName" />
+                <ScalarProperty Name="tPassword" ColumnName="tPassword" />
+                <ScalarProperty Name="tCreatedBy" ColumnName="tCreatedBy" />
+                <ScalarProperty Name="dDateCreated" ColumnName="dDateCreated" />
+                <ScalarProperty Name="tModifiedBy" ColumnName="tModifiedBy" />
+                <ScalarProperty Name="dDateModified" ColumnName="dDateModified" />
+                <ScalarProperty Name="bActive" ColumnName="bActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
